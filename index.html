@@ -1,18 +1,33 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MY PORTFOLIO</title>
+
+    <title>MY PORTFOLIO | Adarsh</title>
+
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="images/adp.png">
 </head>
 
 <body>
+
+    <!-- NAVBAR -->
     <nav class="navbar">
-        <h2>Adarsh.</h2>
-        <div class="navbar2">
+        <h2 class="logo">Adarsh.</h2>
+
+        <button
+            class="menu-btn"
+            id="menuBtn"
+            aria-label="Toggle navigation"
+            aria-expanded="false"
+            aria-controls="navbarMenu">
+            ☰
+        </button>
+
+        <div class="navbar2" id="navbarMenu">
             <a href="#Home">Home</a>
             <a href="#About">About</a>
             <a href="#Project">Project</a>
@@ -21,68 +36,142 @@
     </nav>
 
     <main>
-        <section class="sec1">
-            <h4>HELLO. I'M ADARSH 👋</h4>
-            <b>Frontend</b> <br> <b>Developer</b>
-            <p>I create modern, responsive and interactive websites using HTML, CSS,<br> JavaScript and React.</p>
-            <img src="images/adp1.png" alt="">
-            <div class="button">
-                <button class="a">view my work</button>
-                <button class="b">content me</button>
+
+        <!-- HOME SECTION -->
+        <section id="Home" class="sec1">
+
+            <div class="hero-content">
+                <h4>HELLO. I'M ADARSH 👋</h4>
+
+                <h1>
+                    <span>Frontend</span>
+                    <span>Developer</span>
+                </h1>
+
+                <p>
+                    I create modern, responsive and interactive websites
+                    using HTML, CSS, JavaScript and React.
+                </p>
+
+                <div class="button">
+                    <a class="btn a" href="#Project">View My Work</a>
+                    <a class="btn b" href="#Contact">Contact Me</a>
+                </div>
             </div>
+
+            <img src="images/adp1.png" alt="Adarsh profile photo">
+
         </section>
 
+        <!-- ABOUT SECTION -->
         <section id="About" class="sec2">
+
             <h4>ABOUT ME</h4>
-            <h2>I build things fior the web.</h2>
-            <p>I'm a frontend developer who enjoys creating beautiful and user-friendly interfaces</p>
+
+            <h2>I build things for the web.</h2>
+
+            <p>
+                I'm a frontend developer who enjoys creating
+                beautiful and user-friendly interfaces.
+            </p>
 
         </section>
 
+        <!-- PROJECT SECTION -->
         <section id="Project" class="sec3">
+
             <h4>MY WORK</h4>
-            <p>Recent Projects</p>
+
+            <p class="project-title">Recent Projects</p>
+
             <div class="cards">
+
                 <div class="card">
                     <h1>🚀</h1>
-                    <h2>Portfolio Websiter</h2>
-                    <h5>A responsive personal portfolio website with modern animations</h5>
-                    <b>View Project →</b>
+                    <h2>Portfolio Website</h2>
+
+                    <h5>
+                        A responsive personal portfolio website
+                        with modern animations.
+                    </h5>
+
+                    <a href="#Contact">View Project →</a>
                 </div>
 
                 <div class="card">
                     <h1>🌐</h1>
                     <h2>Business Website</h2>
-                    <h5>A clean and responsive website for a modem business.</h5>
-                    <b>View Project →</b>
+
+                    <h5>
+                        A clean and responsive website
+                        for a modern business.
+                    </h5>
+
+                    <a href="#Contact">View Project →</a>
                 </div>
 
                 <div class="card">
                     <h1>⚡</h1>
                     <h2>React Application</h2>
-                    <h5>Interactive frontend application built using React</h5>
-                    <b>View Project →</b>
+
+                    <h5>
+                        An interactive frontend application
+                        built using React.
+                    </h5>
+
+                    <a href="#Contact">View Project →</a>
                 </div>
+
             </div>
         </section>
 
+        <!-- CONTACT SECTION -->
         <section id="Contact" class="sec4">
+
             <h4>GET IN TOUCH</h4>
+
             <h2>Let's build something together.</h2>
-            <div class="button">
-                <button class="conb">Contact me</button>
+
+            <div class="contact-button">
+                <a class="btn conb" href="mailto:your-email@example.com">
+                    Contact Me
+                </a>
             </div>
 
         </section>
 
-        <section class="footer">
-            <footer>
-                &copy;2026 Adarsh. All rights resolved
-            </footer>
-        </section>
+        <!-- FOOTER -->
+        <footer class="footer">
+            <p>&copy; 2026 Adarsh. All rights reserved.</p>
+        </footer>
 
     </main>
 
-</body>
+    <!-- HAMBURGER MENU JAVASCRIPT -->
+    <script>
+        const menuBtn = document.getElementById("menuBtn");
+        const navbarMenu = document.getElementById("navbarMenu");
 
+        menuBtn.addEventListener("click", function () {
+            const isOpen = navbarMenu.classList.toggle("active");
+
+            menuBtn.innerHTML = isOpen ? "✕" : "☰";
+
+            menuBtn.setAttribute(
+                "aria-expanded",
+                isOpen ? "true" : "false"
+            );
+        });
+
+        // Link click karne par mobile menu band ho jayega
+        navbarMenu.querySelectorAll("a").forEach(function (link) {
+            link.addEventListener("click", function () {
+                navbarMenu.classList.remove("active");
+                menuBtn.innerHTML = "☰";
+                menuBtn.setAttribute("aria-expanded", "false");
+            });
+        });
+    </script>
+
+</body>
 </html>
