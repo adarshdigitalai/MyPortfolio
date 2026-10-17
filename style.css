@@ -1,231 +1,622 @@
 
+/* =========================
+   GENERAL STYLING
+========================= */
 
-/* body{
-    background-color: black;
-} */
-.navbar{
-    height: 40px;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 20px;
+}
+
+body {
+    background-color: #f7f8fc;
+    color: #171717;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 15px 25px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button,
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+    min-height: 55px;
     background-color: white;
-    border: 1px solid rgb(224, 220, 220);
-    box-shadow:0 0 10px rgba(95, 105, 233, 0.5);
+    border: 1px solid #e0dcdc;
+    box-shadow: 0 0 10px rgba(95, 105, 233, 0.25);
     border-radius: 20px;
 
-    
     display: flex;
     align-items: center;
     justify-content: space-around;
-    /* position: fixed; */
-    /* padding:  5px 20px; */
-    /* margin: 5px 30px; */
 
+    padding: 8px 20px;
+    position: relative;
+    z-index: 100;
 }
 
-.navbar2{
+.logo {
+    font-size: 25px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.navbar2 {
     display: flex;
+    align-items: center;
     gap: 30px;
 }
-a{
-    text-decoration: none;
-    color: black;
+
+.navbar2 a {
+    color: #222;
+    font-size: 15px;
+    transition: color 0.3s ease;
 }
 
-h2{
-    font-family: Arial, Helvetica, sans-serif;
-
+.navbar2 a:hover {
+    color: blue;
 }
-            /* SECTION 1 */
-.sec1{
+
+/* Hamburger button: desktop par hidden */
+
+.menu-btn {
+    display: none;
+    border: none;
+    background: transparent;
+    color: #171717;
+    font-size: 28px;
+    cursor: pointer;
+    padding: 5px 8px;
+}
+
+/* =========================
+   HOME SECTION
+========================= */
+
+.sec1 {
     position: relative;
+    min-height: 380px;
+
+    background: white;
+    margin-top: 20px;
+    padding: 45px 50px;
+
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(95, 105, 233, 0.25);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
 }
-.sec1 h4{
+
+.hero-content {
+    flex: 1;
+}
+
+.sec1 h4 {
     color: blueviolet;
-    padding-top: 50px;
-    padding-left: 50px;
+    margin-bottom: 18px;
+    font-size: 16px;
 }
 
-.sec1 img{
-    height: 200px;
-    width: 200px;
-    border-radius: 100px;
-    position: absolute;
-    top: 30%;
-    right: 90px;
-    animation: floating 1s ease-in-out infinite;
-}
-
-@keyframes floating{
-
-0%{
-   transform: translateY(0); 
-}
-50%{
-    transform: translateY(-20px);
-}
-100%{
-    transform: translateY(0);
-}
-}
-.sec1 b{
+.sec1 h1 {
     font-size: 50px;
-    padding-top: 50px;
-    padding-left: 50px;
+    line-height: 1.15;
+    margin-bottom: 18px;
+}
+
+.sec1 h1 span {
+    display: block;
+}
+
+.sec1 p {
+    font-size: 16px;
+    line-height: 1.7;
+    max-width: 550px;
+    margin-bottom: 25px;
+}
+
+.sec1 img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+
+    animation: floating 2s ease-in-out infinite;
+}
+
+/* Image floating animation */
+
+@keyframes floating {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+.button {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+    min-height: 42px;
+    padding: 10px 18px;
+
+    border-radius: 7px;
+    font-size: 15px;
     font-family: Arial, Helvetica, sans-serif;
 
+    cursor: pointer;
+    transition: 0.3s ease;
 }
 
-.sec1 p{
-    /* font-size: 50px; */
-    /* padding-top: 50px; */
-    padding-left: 50px;
-    font-family: Arial, Helvetica, sans-serif;
-
-}
-
-.button{
-    padding-left: 50px;
-}
-
-.button .a{
+.btn.a {
     color: white;
     background-color: blue;
-    height: 40px;
-    border-radius: 5px;
-    font-size: 15px;
-    font-family: Arial, Helvetica, sans-serif;
+    border: 1px solid blue;
 }
 
-.button .b{
-    color: black;
+.btn.a:hover {
+    background-color: darkblue;
+}
+
+.btn.b {
+    color: #171717;
     background-color: white;
-    height: 40px;
-    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.btn.b:hover {
+    background-color: #f0f0f0;
+}
+
+/* =========================
+   ABOUT SECTION
+========================= */
+
+.sec2 {
+    min-height: 300px;
+
+    background: white;
+    margin-top: 20px;
+    padding: 75px 25px;
+
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(95, 105, 233, 0.25);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 18px;
+}
+
+.sec2 h4 {
+    color: blue;
     font-size: 15px;
-    font-family: Arial, Helvetica, sans-serif;
 }
 
-.sec1{
-    background:white;
-    margin-top:20px;
-    padding:20px;
-    border-radius:20px;
-    box-shadow:0 0 10px rgba(95, 105, 233, 0.5);
-    
-}
-                /* SECTION 2 */
-.sec2{
-    height: 300px;
-    background:white;
-    margin-top:20px;
-    padding-top:90px;
-    border-radius:10px;
-    box-shadow:0 0 10px rgba(95, 105, 233, 0.9);
-    
+.sec2 h2 {
+    font-size: 30px;
 }
 
-.sec2 h4{
-    color: blue;
-    text-align: center;
-}
-.sec2 h2{
-    text-align: center;
+.sec2 p {
+    font-size: 16px;
+    line-height: 1.7;
+    max-width: 650px;
 }
 
-.sec2 p{
-    text-align: center;
-}
-            /* SECTION 3 */
+/* =========================
+   PROJECT SECTION
+========================= */
 
-.sec3 h4{
-    color: blue;
-    text-align: center;
+.sec3 {
     margin-top: 50px;
 }
 
-.sec3 p{
-    /* color: blue; */
+.sec3 > h4 {
+    color: blue;
     text-align: center;
-    font-size: 40px;
-    margin-top: -10px;
-    font-family: Arial, Helvetica, sans-serif;
+    margin-bottom: 18px;
+    font-size: 15px;
 }
 
-.cards{
+.sec3 .project-title {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 30px;
+}
+
+.cards {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 40px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 25px;
 }
 
-.card{
-    height: 250px;
-    /* width: 300px; */
-    background-color: rgb(240, 240, 248);
-    /* padding: 15px 0; */
-    padding-left: 30px;
+.card {
+    min-width: 0;
+    min-height: 250px;
 
+    background-color: #f0f0f8;
+    padding: 25px;
 
     border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
 
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease;
 }
 
-.card h1{
-        align-items: start;
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
 }
 
-.card h5{
-    font-size: 20px;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif   ;
-    margin-top: 5px;
+.card h1 {
+    font-size: 35px;
+    margin-bottom: 15px;
 }
 
-.card b{
-    font-size: 20px;
+.card h2 {
+    font-size: 21px;
+    margin-bottom: 12px;
+}
+
+.card h5 {
+    font-size: 16px;
+    font-weight: normal;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.card a {
+    font-size: 16px;
+    font-weight: bold;
     color: blue;
 }
 
-             /* SECTION 4 */
+.card a:hover {
+    text-decoration: underline;
+}
 
-.sec4{
-    height: 300px;
+/* =========================
+   CONTACT SECTION
+========================= */
+
+.sec4 {
+    min-height: 280px;
+
     background-color: white;
-    box-shadow:0 0 10px rgba(10, 10, 17, 0.9);
+    box-shadow: 0 0 10px rgba(10, 10, 17, 0.15);
+
     margin-top: 50px;
-    padding-top: 40px;
+    padding: 40px 20px;
+
     border-radius: 20px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    text-align: center;
 }
 
-.sec4 h4{
+.sec4 h4 {
     color: blue;
-    text-align: center;
-    margin-top: 50px;
+    font-size: 15px;
 }
 
-.sec4 h2{
-    text-align: center;
+.sec4 h2 {
+    font-size: 30px;
 }
 
-.sec4 .button{
-    text-align: center;
-    
+.contact-button {
+    display: flex;
+    justify-content: center;
 }
 
-.conb{
+.conb {
     color: white;
     background-color: blue;
-    height: 40px;
+    border: 1px solid blue;
     border-radius: 10px;
 }
 
-        /* FOOTER */
+.conb:hover {
+    background-color: darkblue;
+}
 
-    .footer{
-        text-align: center;
-        height: 50px;
-        margin-top: 20px;
-        padding-top: 40px;
-        background-color: white;
-        box-shadow:0 0 10px rgba(12, 12, 19, 0.9);
-        border-radius: 20px;
-        font-family: Georgia, 'Times New Roman', Times, serif;
+/* =========================
+   FOOTER
+========================= */
+
+.footer {
+    text-align: center;
+    margin-top: 20px;
+    padding: 25px 10px;
+
+    background-color: white;
+    box-shadow: 0 0 10px rgba(12, 12, 19, 0.12);
+    border-radius: 20px;
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 14px;
+}
+
+/* =========================
+   TABLET RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+    body {
+        padding: 12px 18px;
     }
+
+    .sec1 {
+        padding: 35px;
+    }
+
+    .sec1 h1 {
+        font-size: 42px;
+    }
+
+    .sec1 img {
+        width: 170px;
+        height: 170px;
+    }
+
+    .cards {
+        gap: 15px;
+    }
+
+    .card {
+        padding: 18px;
+    }
+
+    .card h2 {
+        font-size: 19px;
+    }
+}
+
+/* =========================
+   MOBILE RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+
+    body {
+        padding: 10px;
+    }
+
+    /* Navbar */
+
+    .navbar {
+        min-height: 55px;
+        padding: 8px 15px;
+
+        justify-content: space-between;
+        flex-wrap: wrap;
+        border-radius: 14px;
+    }
+
+    .logo {
+        font-size: 23px;
+    }
+
+    .menu-btn {
+        display: block;
+    }
+
+    .navbar2 {
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+
+        width: 100%;
+        padding-top: 8px;
+    }
+
+    .navbar2.active {
+        display: flex;
+    }
+
+    .navbar2 a {
+        display: block;
+        padding: 14px 5px;
+        border-top: 1px solid #eeeeee;
+        font-size: 16px;
+    }
+
+    /* Home */
+
+    .sec1 {
+        min-height: auto;
+        padding: 28px 22px;
+
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 25px;
+    }
+
+    .hero-content {
+        width: 100%;
+    }
+
+    .sec1 h4 {
+        font-size: 14px;
+    }
+
+    .sec1 h1 {
+        font-size: 38px;
+    }
+
+    .sec1 p {
+        font-size: 15px;
+    }
+
+    .sec1 img {
+        width: 155px;
+        height: 155px;
+
+        align-self: center;
+        margin: 5px auto;
+    }
+
+    .button {
+        gap: 10px;
+    }
+
+    .btn {
+        font-size: 14px;
+        padding: 10px 14px;
+    }
+
+    /* About */
+
+    .sec2 {
+        min-height: auto;
+        padding: 55px 20px;
+        gap: 16px;
+    }
+
+    .sec2 h2 {
+        font-size: 25px;
+    }
+
+    .sec2 p {
+        font-size: 15px;
+    }
+
+    /* Projects */
+
+    .sec3 {
+        margin-top: 40px;
+    }
+
+    .sec3 .project-title {
+        font-size: 30px;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .card {
+        min-height: auto;
+        padding: 22px;
+    }
+
+    .card h2 {
+        font-size: 21px;
+    }
+
+    .card h5 {
+        font-size: 16px;
+    }
+
+    /* Contact */
+
+    .sec4 {
+        min-height: 250px;
+        padding: 30px 18px;
+        gap: 18px;
+    }
+
+    .sec4 h2 {
+        font-size: 25px;
+        line-height: 1.4;
+    }
+
+    /* Footer */
+
+    .footer {
+        padding: 22px 10px;
+        font-size: 13px;
+    }
+}
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 380px) {
+
+    .sec1 {
+        padding: 23px 16px;
+    }
+
+    .sec1 h1 {
+        font-size: 32px;
+    }
+
+    .sec1 p {
+        font-size: 14px;
+    }
+
+    .button {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .btn {
+        width: 100%;
+    }
+
+    .sec2 h2,
+    .sec4 h2 {
+        font-size: 22px;
+    }
+
+    .sec3 .project-title {
+        font-size: 26px;
+    }
+}
+
+/* Animation ko reduce karne ki accessibility setting */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
+}
